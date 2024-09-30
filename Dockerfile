@@ -20,6 +20,12 @@ RUN apk add gcompat==1.1.0-r4
 
 RUN apk add aws-cli>=2.13.25
 
+# Fix vulnerabilities
+RUN apk upgrade \
+  busybox>1.36.1-r19 \
+  python3>3.11.10-r0
+
+
 RUN rm -rf /var/cache/apk/*
 
 # 
